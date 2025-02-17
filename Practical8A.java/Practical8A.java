@@ -10,13 +10,13 @@ class Practical8B {
 
     // Pattern A
     public static void getPatternA1(int line, int size) {
-        if (line > size) {
+        if (line > size+1) {
             return;
         }
         printStars(line);
         System.out.println();
         getPatternA1(line + 1, size);
-        if (line < size) {
+        if (line <= size) {
             printStars(line);
             System.out.println();
         }
