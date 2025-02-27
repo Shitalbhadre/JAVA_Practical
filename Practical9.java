@@ -4,12 +4,12 @@ class Practical9 {
     public static int[] randomNumbers(int number) {
         int[] arr = new int[number];
         for (int i = 0; i < number; i++) {
-            arr[i] =(int)(System.nanoTime()%30)+ 1; // Generate numbers between 1 and 10
+            arr[i] =(int)(System.nanoTime()%30)+ 1; 
         }
         return arr;
     }
 
-    // Factorial using iteration time calculation
+    // iteration time calculation of Factorial 
     public static long FactIterationTimeCount(int number) {
         long startTime = System.nanoTime();
         long fact = 1;
@@ -20,15 +20,16 @@ class Practical9 {
         return endTime - startTime;
     }
 
-    // Factorial using recursion time calculation
-    public static long factRecursive(long num) { // Changed int to long
+    //recursion time calculation of Factorial 
+    // Changed int to long
+    public static long factRecursive(long num) { 
         if (num < 2) {
             return 1;
         }
         return num * factRecursive(num - 1);
     }
 
-    // Factorial using recursion function call 
+    // recursion function call to calculate Factorial  
     public static long FactRecursiveTimeCount(int number) {
         long startTime = System.nanoTime();
         factRecursive(number); // Removed unused variable `result`
@@ -42,14 +43,14 @@ class Practical9 {
         long totalRecursiveTime = 0;
 
         for (int number : arr) {
-            for (int i = 0; i < 5; i++) { // Run multiple times for better accuracy
+            for (int i = 0; i < 5; i++) { 
                 totalIterationTime += FactIterationTimeCount(number);
                 totalRecursiveTime += FactRecursiveTimeCount(number);
             }
         }
 
-        long iterationAverage = totalIterationTime / (arr.length * 5);
-        long recursiveAverage = totalRecursiveTime / (arr.length * 5);
+        long iterationAverage = totalIterationTime / 5;
+        long recursiveAverage = totalRecursiveTime / 5;
 
         if (iterationAverage <= recursiveAverage) {
             System.out.println("Iterative method is Faster.");
@@ -112,6 +113,6 @@ class Practical9 {
     int size=Integer.parseInt(args[0]);
         int arr[] = randomNumbers(size);
         TimeCount(arr);
-        stringConcatenationTime(size); // Increased size for better comparison
+        stringConcatenationTime(size); 
     }
 }
