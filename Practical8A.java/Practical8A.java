@@ -1,4 +1,4 @@
-class Practical8B {
+class Practical8A {
     public static void main(String args[]) {
         getPatternA1(1, 3);
         System.out.println();
