@@ -7,7 +7,7 @@ class GenerateSudoku{
           int size = Integer.parseInt(args[0]);
           result = new String[size][size];
           question = new String[size][size];
-          PrintLayOut(size);
+          
           generateArray(size);
           generateQuestion(size);
           PrintLayOut(size);
