@@ -1,4 +1,4 @@
-class GenerateSudoku{
+class Practical10{
 
        static String[][] result;
        static String[][] question;
@@ -18,11 +18,11 @@ class GenerateSudoku{
            for (int i = 0; i < size; i++) {
                int col = 0;
                for (int j = i; j < size; j++) {
-                    result[i][col] = String.format("%03d", j + 1);
+                    result[i][col] = String.format("%3d", j + 1);
                     col++;
                }
                for (int j = 0; j < i; j++) {
-                    result[i][size - i + j] = String.format("%03d", j + 1);
+                    result[i][size - i + j] = String.format("%3d", j + 1);
                }
             }
             return result;
