@@ -7,7 +7,7 @@ class GenerateSudoku{
           int size = Integer.parseInt(args[0]);
           result = new String[size][size];
           question = new String[size][size];
-          
+         
           generateArray(size);
           generateQuestion(size);
           PrintLayOut(size);
@@ -27,15 +27,23 @@ class GenerateSudoku{
             }
             return result;
         }
+      
         public static String[][] generateQuestion(int size){
-       
-               for(int i=1; i<(size*size)-2*(size-1); i++){
-               int row = (int)(System.nanoTime()%size);
-               int col = (int)(System.nanoTime()%size);
-               question[row][col]  = result[row][col];
+    
+        for (int i = 0; i < size; i++) {
+         for (int j = 0; j < size; j++) {
+            question[i][j] = result[i][j]; 
+         }
+        }
+
+        for(int i = 0; i < (size * size) - 2 * (size - 1); i++) {
+           int row = (int)(System.nanoTime() % size); 
+           int col = (int)(System.nanoTime() % size); 
+           question[row][col] = "   "; 
         }
         return question;
         }
+
        
         public static void PrintLayOut(int size){
                String s = "   ";
@@ -51,8 +59,8 @@ class GenerateSudoku{
                }else{
                for(int verticalLine = 1; verticalLine<=size*2+1; verticalLine++){
                if(verticalLine%2 == 0){
-                    String value = question[(line/2)-1][(verticalLine/2)-1];
-                    System.out.print(s.replaceFirst("   ", (value != null) ? value : "   "));                
+                  
+                  System.out.print(s.replaceFirst("   ", question[(line/2)-1][(verticalLine/2)-1]));                
                }else{
                      System.out.print("|");
                }
@@ -62,4 +70,3 @@ class GenerateSudoku{
                }
         }
 }
-
