@@ -3,14 +3,15 @@ import java.io.*;
 
 class SudoKuNextVersion {
     
-    static int size = 3; 
-    static String[][] result = new String[size][size];    
+    static int size;
+    static String[][] result;    
     static Random random = new Random(); 
     static String[][] question;
     static String[][] solve;
 
     public static void main(String args[])throws IOException {
-        
+        size = Integer.parseInt(args[0]);
+        result = new String[size][size];
         question = new String[size][size];
         solve = new String[size][size];
         
@@ -92,7 +93,7 @@ class SudoKuNextVersion {
 
             question[i][j] = result[i][j]; 
 
-            question[i][j] = result[i][j]; // Copy values
+            question[i][j] = result[i][j]; 
 
          }
         }
