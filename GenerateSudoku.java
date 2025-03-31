@@ -32,7 +32,11 @@ class Practical10{
     
         for (int i = 0; i < size; i++) {
          for (int j = 0; j < size; j++) {
+<<<<<<< Updated upstream
             question[i][j] = result[i][j]; 
+=======
+            question[i][j] = result[i][j]; // Copy values
+>>>>>>> Stashed changes
          }
         }
 
@@ -59,7 +63,11 @@ class Practical10{
                }else{
                for(int verticalLine = 1; verticalLine<=size*2+1; verticalLine++){
                if(verticalLine%2 == 0){
+<<<<<<< Updated upstream
                   
+=======
+                  //String value = question[(line/2)-1][(verticalLine/2)-1];
+>>>>>>> Stashed changes
                   System.out.print(s.replaceFirst("   ", question[(line/2)-1][(verticalLine/2)-1]));                
                }else{
                      System.out.print("|");
